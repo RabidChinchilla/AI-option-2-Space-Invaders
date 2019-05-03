@@ -74,7 +74,7 @@ public class AINT255Evolutionary implements Runnable {
         numberGenerations = 10;
         numberElite = 4;
 
-        mutationMagnitude = 2;
+        mutationMagnitude = 1;
         mutationProbability = 0.05;
 
         //*****************************
