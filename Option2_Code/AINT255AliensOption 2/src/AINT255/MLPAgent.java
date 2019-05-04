@@ -184,7 +184,7 @@ public class MLPAgent extends AbstractPlayer {
          * EDIT: Please define the dimensions of the viewport
          */
         viewWidth = 5;
-        viewHeight = 8;
+        viewHeight = 10;
         //*****************************
 
         int blockSize;
@@ -216,8 +216,10 @@ public class MLPAgent extends AbstractPlayer {
             for (int j = colStart; j <= colEnd; j++) {  // rows
                 if (j < 0) {
                     //   left outside game window
+                    MLPScaledInputs[index] = 1;
                 } else if (j >= numGridCols) {
                     //   right outside game window
+                    MLPScaledInputs[index + 1] = 1;
                 } else if (gameGrid[j][i].isEmpty()) {
                     MLPScaledInputs[index] = 0;
                 } else {
@@ -225,13 +227,16 @@ public class MLPAgent extends AbstractPlayer {
 
                         switch (o.itype) {
                             case 3:        // obstacle sprite
-                                MLPScaledInputs[index] = 1;
+                                MLPScaledInputs[index + 2] = 1;
                                 break;
                             case 1:        // user ship
+                                MLPScaledInputs[index + 3] = 1;
                                 break;
                             case 9:        // alien sprite
+                                MLPScaledInputs[index + 4] = 1;
                                 break;
                             case 6:        // missile
+                                MLPScaledInputs[index + 5] = 1;
                                 break;
                         }
                     }

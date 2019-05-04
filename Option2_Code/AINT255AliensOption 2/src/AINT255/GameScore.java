@@ -77,8 +77,8 @@ public class GameScore {
          */
         // assume the overall score 
         // is just the score of a game
-        //overallScore = score;
-        overallScore = score - timeSteps;
+        overallScore = score;
+        //overallScore = score - timeSteps;
         //overallScore = ((score*10) / numMissiles);
         //overallScore = timeSteps;
         return overallScore;
