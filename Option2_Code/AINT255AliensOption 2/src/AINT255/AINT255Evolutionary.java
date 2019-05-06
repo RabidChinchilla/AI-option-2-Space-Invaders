@@ -71,7 +71,7 @@ public class AINT255Evolutionary implements Runnable {
          * EDIT: Please define evolution parameters
          */
         populationSize = 10;
-        numberGenerations = 3;
+        numberGenerations = 10;
         numberElite = 4;
 
         mutationMagnitude = 0.5;
